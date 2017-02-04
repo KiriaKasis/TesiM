@@ -1,0 +1,116 @@
+\documentclass[12pt,a5paper,draft,oneside]{report}              
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[greek,italian,english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+%\usepackage{makeidx}
+%\usepackage{graphicx}
+%\usepackage{lmodern}
+\usepackage{fourier}
+%\usepackage[garamond]{mathdesign}
+%\usepackage{fontspec}  
+%\setmainfont{EB Garamond}[
+%  Contextuals={Alternate},
+%  Numbers=OldStyle,
+%]
+%\usepackage{kpfonts}
+\usepackage[left=0.5cm,
+			right=6cm,top=0.5cm,
+			bottom=0.5cm]{geometry}
+%\usepackage{mathrsfs}
+%\usepackage{bussproofs}
+%\usepackage{prftree}
+\usepackage{ebproof}
+\usepackage{proof}
+
+\author{Alberto Fiori}
+\title{Realizzabilità e altre cose interessanti}
+
+\begin{document}
+
+\begin{abstract}
+In questa tesi utiliziamo $A_{\bm{\Lambda}\Lambda}$
+\end{abstract}
+
+\chapter{ExpQreQQssQionQ QLanguage}
+	Following the ideas that I first read in the book "programming in Martin Löf type thery". Basically every expression we write in a mathematical expression has an arity (0,$\alpha\rightarrow\beta$, $\alpha_1\otimes\alpha_2\ldots\otimes\alpha_n$) which work similarly to how types in simply typed lambda calculus work. 
+	This simply is a way to ensure that expression are well-formed (even if it doesn't ensure that they are reasonable); we chose to add the $\otimes\ldots\otimes$ constructor to freely chose when to \emph{curry} and \emph{uncurry} function application; we could have added more, but there seem to be no advantage in doing so.
+	
+	The rule for arity are the expected ones:
+	%TODO non so come fare le deduzioni naturali
+	
+	
+	\section{Everithhung has an Arithy} 
+		123123123123
+
+\chapter{Test stuff}
+	\begin{eqnarray}
+		\infer{B}{A & (A \rightarrow B)}	\\
+		\infer{B}{A & (A \rightarrow B)}	\\
+		\infer={B \land A}{A \land B)}		\\
+		\infer[^{(2)}]
+     {\neg(\phi \land \psi)}
+     {\infer[^{(1)}]
+        {\bot}
+        {(\neg\phi \lor \neg\psi) & \bot & \bot}
+     }
+     \\
+     \infer[^{(2)}]
+     {\neg(\phi \land \psi)}
+     {\infer[^{(1)}]
+        {\bot}
+        {(\neg\phi \lor \neg\psi) & 
+        \infer
+            {\bot}
+            {\phi & 
+            \infer[^{(1)}]
+            {\neg\phi}{}
+            } 
+        & \bot}
+     }\\     
+	\end{eqnarray}
+$$
+\infer[(\to I)]
+     {(A \to B)}
+     {
+     \infer*{B}{[A]}
+     }
+\qquad
+\infer[(\to E)]
+     {B}
+     {(A \to B) & A}
+$$
+
+
+
+The rule 
+$\vcenter
+{
+\infer
+    {(A \to B)}
+    {
+    \infer*{B}{[A] & A & A & A & A & A & A}
+    }
+}$
+is known as $\to$-introduction
+\newpage
+\[
+\begin{prooftree}
+\Hypo{ \vdash A }
+\Hypo{ \vdash B } \Infer1{ \vdash B, C }
+\Infer2{ \vdash A\wedge B, C }
+\end{prooftree}
+%
+\quad \rightsquigarrow \quad
+\begin{prooftree}
+\Hypo{ \vdash A } \Hypo{ \vdash B }
+\Infer2{ \vdash A\wedge B }
+\Infer1{ \vdash A\wedge B, C }
+\end{prooftree}
+\]
+
+\end{document}
