@@ -1,7 +1,7 @@
 \documentclass[11pt,a5paper,draft,oneside]{report}              
 %\usepackage[utf8]{inputenc}
 \usepackage[greek,italian,english]{babel}
-\usepackage{amsmath, amsthm}
+\usepackage{amsmath, amsthm, amsopn}
 %\usepackage{amsfonts}
 %\usepackage{amssymb}
 \usepackage{bm}
@@ -29,12 +29,19 @@
 
 \begin{document}
 
-\begin{abstract}
-In questa tesi utiliziamo $A_{\bm{\Lambda}\Lambda}$
-\end{abstract}
+%\begin{abstract}
+%In questa tesi utiliziamo $A_{\bm{\Lambda}\Lambda}$
+%\end{abstract}
 
 \chapter{Expression Language}
-	Following the ideas that I first read in the book "programming in Martin Löf type thery". Basically every expression we write in a mathematical expression has an arity (0,$\alpha\rightarrow\beta$, $\alpha_1\otimes\alpha_2\ldots\otimes\alpha_n$) which work similarly to how types in simply typed lambda calculus work. 
+	The following is based on the ideas that I first read in the book "programming in Martin Löf type thery" 
+	\footnote{Non sono più convinto di questa cosa; nel libro si parla escusivamente di \emph{MLTT} dove c'è un enorme rigidità nelle costruzioni ammesse, al contrario quando siamo in realizzabilità abbiamo decisamente una maggior libertà: potremmo per esempio scrivere l'espressione $\text{apply}(0,0)$ semplicemente questa non farebbe parte di alcun tipo.
+	rimarrebbe ora da decidere come trattare il concetto di arietà funzionale, la Coquand definisce il costruttore di funzione come $\lambda x . e$ dando nomi espliciti alle variabili e richiamandosi all'operatore di sostituzione $B\{a/x\}$ per rappresentare i ``conti'' seguendo questa struttura, la consueta sintassi di funzione diventa obsoleta, il lambda calcolo funzionale (i.e.\ $(x).f$ o $\left\langle x\right\rangle.f$) diventa di fatto non strettamente necessario negli usi che servono nell'articolo. \\ questo mi porta a propormi di non accanirmi sulle a
+	rietà di non preoccuparsi troppo del $\lambda x.e$ dei $\Pi$-tipi (a cui n
+	on sono troppo abituato: $\lambda x.e 
+	= \lambda ((x).e)$) 
+	}. 
+	Basically every expression we write in a mathematical expression has an arity (0,$\alpha\rightarrow\beta$, $\alpha_1\otimes\alpha_2\ldots\otimes\alpha_n$) which work similarly to how types in simply typed lambda calculus work. 
 	This simply is a way to ensure that expression are well-formed (even if it doesn't ensure that they are reasonable); we chose to add the $\otimes\ldots\otimes$ constructor to freely chose when to \emph{curry} and \emph{uncurry} function application; we could have added more, but there seem to be no advantage in doing so.
 	
 	The rule for arity are the expected ones:
