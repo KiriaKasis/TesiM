@@ -35,21 +35,30 @@
 	
 \newcommand{\femph}{\textbf}
 \begin{document}
-%$\uplaOp{\alpha}{4}{\otimes}$
-%
-%$\xnContext{A}{x}{n}$
-%\begin{abstract}
-%In questa tesi utiliziamo $A_{\bm{\Lambda}\Lambda}$
-%\end{abstract}
+\maketitle
+\begin{abstract}
+	As I understand it the speciality of a 
+	realizzability 	interpretation is in 
+	being looser, for example in this theory
+	the term $natrec(x, 0, 0)$, where x is a free variable, belongs to every type despite not even being well formed in a type theory context. 
+\end{abstract}
 
-\section{Copycatting: section are in a reversed order for easier debugging}
-
-
+\section{Copycatting: Let's get vaguely serious}
+	\subsection{Starting definitions}
+		We are going to give a different interpretation 
+		of the same language used in the Minimalist 
+		Foundation. Una delle differenza sarà che definiremo
+		un'untyped relazione di riducibilità invece 
+		del giudizio di uguanza tipata; then using the distinction in \femph{canonical} and \femph{non-canonical} expression we will define the set of \femph{normal} expressions (le espressioni normali in mtt sono normali anche qui)
+		Let's give a simple grammar for our language~(in this interpretation we don't actually diffenrentiate between types and elements)
+		\
+		  
 
 \chapter{Expression Language}
 	The following is based on the ideas that I first read in the book "programming in Martin Löf type thery" 
 	\footnote{\label{qwe13}Non sono più convinto di questa cosa; nel libro si parla escusivamente di \emph{MLTT} dove c'è un enorme rigidità nelle costruzioni ammesse, al contrario quando siamo in realizzabilità abbiamo decisamente una maggior libertà: potremmo per esempio scrivere l'espressione $\text{apply}(0,0)$ semplicemente questa non farebbe parte di alcun tipo.
-	rimarrebbe ora da decidere come trattare il concetto di arietà funzionale, la Coquand definisce il costruttore di funzione come $\lambda x . e$ dando nomi espliciti alle variabili e richiamandosi all'operatore di sostituzione $B\{a/x\}$ per rappresentare i ``conti'' seguendo questa struttura, la consueta sintassi di funzione diventa obsoleta, il lambda calcolo funzionale (i.e.\ $(x).f$ o $\left\langle x\right\rangle.f$) diventa di fatto non strettamente necessario negli usi che servono nell'articolo. \\ questo mi porta a propormi di non accanirmi sulle a
+	rimarrebbe ora da decidere come trattare il concetto di arietà funzionale, la Coquand definisce il costruttore di funzione come $\lambda x . e$ dando nomi espliciti alle variabili e richiamandosi all'operatore di sostituzione $B\{a/x\}$ per rappresentare i ``conti'' seguendo questa struttura, la consueta sintassi di funzione diventa obsoleta, il lambda calcolo funzionale (i.e.\ $(x).f$ o $\left\langle x\right\rangle.f$) diventa di fatto non strettamente necessario negli usi che servono nell'articolo. \\
+	Questo mi porta a propormi di non accanirmi sulle a
 	rietà di non preoccuparsi troppo del $\lambda x.e$ dei $\Pi$-tipi (a cui n
 	on sono troppo abituato: $\lambda x.e 
 	= \lambda ((x).e)$) 
