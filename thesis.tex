@@ -10,9 +10,9 @@
 %\usepackage{fontspec}  
 
 \usepackage[T1]{fontenc}
-\usepackage[left=0.5cm,
-			right=8cm,top=0.5cm,
-			bottom=0.5cm]{geometry}
+%\usepackage[left=0.5cm,
+%			right=8cm,top=0.5cm,
+%			bottom=0.5cm]{geometry}
 %\usepackage{mathrsfs}
 %\usepackage{bussproofs}
 %\usepackage{prftree}
@@ -70,7 +70,7 @@
 		Foundation. Una delle differenza sarà che definiremo
 		un'untyped relazione di riducibilità invece 
 		del giudizio di uguanza tipata; then using the distinction in \femph{canonical} and \femph{non-canonical} expression we will define the set of \femph{normal} expressions (le espressioni normali in mtt sono normali anche qui)
-		Let's give a simple grammar for our language~(in this interpretation we don't actually diffenrentiate between types and elements): let $\Va$ be an infinite set of variables (generally denoted with $x,y,z,w$ and with \marginpar{pensando di nuovo a come trattare il concetto delle \emph{astrazioni} in \textsl{proglöf} credo che per ora la cosa migliore sia dimenticarsene e non usarle}		
+		Let's give a simple grammar for our language~(in this interpretation we don't actually diffenrentiate between types and elements): let $\Va$ be an infinite set of variables (generally denoted with $x,y,z,w$ and with \footnote{pensando di nuovo a come trattare il concetto delle \emph{astrazioni} in \textsl{proglöf} credo che per ora la cosa migliore sia dimenticarsene e non usarle}		
 \begin{dede}
 	The set of expression $\Ve$ will be inductively genererated from the set of variables $\Va$ as closed under the following construct:
 	\begin{gather}
@@ -99,6 +99,36 @@
 		apply(\lambda x.e, d) & \ctr & \sbs{b}{a}{c}\\
 		el
 		\end{align}			
+	\end{dede}
+	
+	\begin{dede}
+	Here we give the definition of $\psi$ and $\Psi$ as inference rules:
+	
+	\begin{multline}
+	\begin{prooftree}
+	\Infer{0}{\Psi(N)}
+	\end{prooftree}	
+	%	
+	\begin{prooftree}
+	\Hypo{\Psi(A)}
+	\Hypo{\Psi(B(a)) \left[\psi(A,h,a)\right]}
+	\Infer2{\Sigma(A,B)}		
+	\end{prooftree}
+	%
+	%
+	\begin{prooftree}
+	\Hypo{\Psi(A)}
+	\Hypo{\Psi(B(a)) \left[\psi(A,h,a)\right]}
+	\Infer2{\Pi(A,B)}		
+	\end{prooftree}
+	%
+	%\\
+	\begin{prooftree}
+		\Hypo{\psi(B a, b a) [\psi(A,a)]}
+		\Infer{1}{\psi(\Pi(A,B),c_?,b)}
+	\end{prooftree}		
+	\end{multline}
+	
 	\end{dede}
 \chapter{Expression Language}
 	The following is based on the ideas that I first read in the book "programming in Martin Löf type thery" 
