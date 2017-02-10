@@ -17,7 +17,7 @@
 %\usepackage{bussproofs}
 %\usepackage{prftree}
 \usepackage{ebproof}
-\usepackage{proof}
+%\usepackage{proof}
 
 \author{Alberto Fiori}
 \title{Realizzabilità e altre cose interessanti}
@@ -79,7 +79,7 @@
 	 0 \\ 
 	 succ(e) \\ 
 	 natrec(e_1,e_2,e_3) \\ 
-	 \cp{e_1,e_2} \\
+	 \cp[e_1,\,e_2] \\
 	 El_\Sigma(e_1, e_2) \\
 	 N 		\\
 	 \Sigma(e_1,e_2)\\
@@ -103,33 +103,88 @@
 	
 	\begin{dede}
 	Here we give the definition of $\psi$ and $\Psi$ as inference rules:
-	
-	\begin{multline}
+	\begin{gather}
 	\begin{prooftree}
 	\Infer{0}{\Psi(N)}
-	\end{prooftree}	
+	\end{prooftree}	\\
 	%	
 	\begin{prooftree}
 	\Hypo{\Psi(A)}
 	\Hypo{\Psi(B(a)) \left[\psi(A,h,a)\right]}
 	\Infer2{\Sigma(A,B)}		
-	\end{prooftree}
+	\end{prooftree}\\
 	%
 	%
 	\begin{prooftree}
 	\Hypo{\Psi(A)}
 	\Hypo{\Psi(B(a)) \left[\psi(A,h,a)\right]}
 	\Infer2{\Pi(A,B)}		
+	\end{prooftree}\\
+	%
+	\begin{prooftree}
+	%
+	\Hypo{\mathcal{F}(A)}
+	\Infer1{\Psi(A)}
 	\end{prooftree}
 	%
-	%\\
 	\begin{prooftree}
-		\Hypo{\psi(B a, b a) [\psi(A,a)]}
-		\Infer{1}{\psi(\Pi(A,B),c_?,b)}
-	\end{prooftree}		
-	\end{multline}
+	\Hypo{A\rightarrow B}
+	\Hypo{\Psi(B)}
+	\Infer2{\Psi(A)}
+	\end{prooftree}
+	\end{gather}
+	
+	
+	\begin{gather}
+	%
+	\begin{prooftree}
+	\Hypo{a \rightarrow b}
+	\Hypo{\mathcal{N}(b) }
+	\Infer2{\psi(N,a)}
+	\end{prooftree}	
+		%
+	\\
+	\begin{prooftree}
+		\Hypo{c_{1b} \colon \Psi(\Pi(A,B))}
+		\Hypo{\psi(B(a), apply(b, a))[\psi(A,a)]}
+		\Infer{2}{\psi(\Pi(A,B),c_?,b)}
+	\end{prooftree}\\		
+	%
+	\begin{prooftree}
+	\Hypo{c_{1c} \colon \Psi(A)}
+	\Hypo{a \rightarrow b}
+	\Hypo{\mathcal{F}(b)}
+	\Infer3{\psi(A,a)}
+	\end{prooftree}	\\		
+	%
+	\begin{prooftree}
+	\Hypo{c_{1d}(A,B,h) \colon \Psi(A)}
+	\Hypo{\psi(B,a)}
+	\Infer2{\psi(A,a)}
+	\end{prooftree}	
+	\end{gather}
+	
+	\begin{gather}
+	%
+	\begin{prooftree}
+	\Hypo{\phantom{\Psi(A)}}
+	\Infer1{\Phi(U)}
+	\end{prooftree}
+	%
+	\begin{prooftree}
+	\Hypo{\Psi(A)}
+	\Infer1{\phi(U,A)}
+	\end{prooftree}	
+	\end{gather}	
 	
 	\end{dede}
+	
+	The normalization theorem will be proved in two steps. In the first step we will prove basic properties of this \emph{Realizzability Interpretation} (such as being normalizing and having other computational properties). In the second step we will give a proof of compatibility between the Minimalist Foundation and the 
+	
+ 	
+	\begin{lem}[qwe]
+	
+	\end{lem}
 \chapter{Expression Language}
 	The following is based on the ideas that I first read in the book "programming in Martin Löf type thery" 
 	\footnote{\label{qwe13}Non sono più convinto di questa cosa; nel libro si parla escusivamente di \emph{MLTT} dove c'è un enorme rigidità nelle costruzioni ammesse, al contrario quando siamo in realizzabilità abbiamo decisamente una maggior libertà: potremmo per esempio scrivere l'espressione $\text{apply}(0,0)$ semplicemente questa non farebbe parte di alcun tipo.
