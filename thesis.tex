@@ -1,4 +1,5 @@
 \documentclass[11pt,a5paper,draft,oneside]{amsbook}
+
 \usepackage[greek,italian,english]{babel}
 \usepackage{amsmath, amsthm, amsopn}
 \usepackage{amsfonts}
@@ -17,10 +18,11 @@
 %\usepackage{bussproofs}
 %\usepackage{prftree}
 \usepackage{ebproof}
+\usepackage{enumerate}
 %\usepackage{proof}
 
-\author{Alberto Fiori}
-\title{Realizzabilità e altre cose interessanti}
+%\input{thesis_pre}
+
 
 \theoremstyle{plain}% default
 \newtheorem{thm}{Theorem}[section]
@@ -44,6 +46,7 @@
 \newcommand{\cp}[1][\cdot,\cdot]{<#1>}
 \newcommand{\ctr}{\triangleright}
 \newcommand{\sbs}[3]{#1\left\lbrace #2 / #3 \right\rbrace}
+\newcommand{\ps}[3][]{\psi\left(#2,#3\right)}
 
 \newcommand{\uplaOp}[3]{#1_{1}#3\dots#3#1_{#2}}
 \newcommand{\upla}[2]{\uplaOp{#1}{#2}{,}}
@@ -54,14 +57,22 @@
 	
 	
 \newcommand{\femph}{\textbf}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{EXT}}}{=}}
+
+\author{Alberto Fiori}
+\title{Realizzabilità e altre cose interessanti}
+
+
 \begin{document}
 \maketitle
 \begin{abstract}
 	As I understand it the speciality of a 
 	realizzability 	interpretation is in 
 	being looser, for example in this theory
-	the term $natrec(x, 0, 0)$, where x is a free variable, belongs to every type despite not even being well formed in a type theory context. 
+	the term $natrec(x, 0, 0)$, where x is a free variable, belongs to every type despite not even being well formed in a type theory context.
 \end{abstract}
+
+\section{Ho risolto il  problema!! tutte le \emph{astrazioni-funzioni} sono delle $\lambda$ nella realizzabilità tanto solanto i termini di arietà 0 possono essere tipati in \femph{MTT}}
 
 \section{Copycatting: Let's get vaguely serious}
 	\subsection{Starting definitions}
@@ -198,7 +209,6 @@
 	This simply is a way to ensure that expression are well-formed (even if it doesn't ensure that they are reasonable); we chose to add the $\otimes\ldots\otimes$ constructor to freely chose when to \emph{curry} and \emph{uncurry} function application; we could have added more, but there seem to be no advantage in doing so.
 	
 	The rule for arity are the expected ones:
-	%TODO non so come fare le deduzioni naturali
 	
 	\section{Everithhung has an Arity} 
 		123123123123
@@ -207,5 +217,31 @@
 		and \femph{non-canonical} and the \femph{tree-like} structure of expressions to define the reducibility relation ricursively.
 		
 		In the whole article, I think, nothing else was used.
-		
+		\newpage
+\section{Properties of the RI}
+	\begin{lem}
+	If $\Psi(A)$ holds the followings are true:
+	\begin{enumerate}
+		\item If $a \in \mathcal{F}$ then $\psi(A,c_{(1)_\mathcal{F}},a)$ is derivable.
+		\item If $\ps{A}{a}$ and \(a = b\) we have also  $\ps{A}{b}$
+		\item If  $\ps{A}{a}$ then $a$ is normalizzable
+		\item If $A=B$ then $\Psi(B)$
+		\item If $A=B$ and $\Psi(B)$ then $\ps{A}{\cdot} $
+		\item If 
+	\end{enumerate}
+	\end{lem}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 \end{document}
