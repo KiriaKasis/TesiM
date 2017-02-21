@@ -1,5 +1,6 @@
+
 \usepackage[greek,italian,english]{babel}
-\usepackage{amsmath, amsthm, amsopn}
+\usepackage{amsmath, amsthm, amsopn, titling}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{bm}
@@ -16,8 +17,10 @@
 %\usepackage{bussproofs}
 %\usepackage{prftree}
 \usepackage{ebproof}
+\usepackage{enumerate}
 %\usepackage{proof}
 
+%\input{thesis_pre}
 
 
 \theoremstyle{plain}% default
@@ -39,9 +42,9 @@
 
 \newcommand{\Va}{\mathcal{V}}
 \newcommand{\Ve}{\mathcal{E}}
-\newcommand{\cp}[1][\cdot,\cdot]{<#1>}
-\newcommand{\ctr}{\triangleright}
-\newcommand{\sbs}[3]{#1\left\lbrace #2 / #3 \right\rbrace}
+\newcommand{\cp}[1][\cdot,\cdot]{<\!\! #1\!\!>}
+\newcommand{\sbs}[3]{#1\!\left\lbrace #2 / #3 \right\rbrace}
+\newcommand{\ps}[3][]{\psi\left(#2,#3\right)}
 
 \newcommand{\uplaOp}[3]{#1_{1}#3\dots#3#1_{#2}}
 \newcommand{\upla}[2]{\uplaOp{#1}{#2}{,}}
@@ -52,3 +55,12 @@
 	
 	
 \newcommand{\femph}{\textbf}
+\newcommand\exteq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily ext}}}{=}}}
+\newcommand{\ctr}{\mathrel{\triangleright}}
+%				*			*			*			*
+\newcommand{\RN} {\text{$\mathcal{R}$-N}}
+\newcommand{\RF} {\text{$\mathcal{R}$-F}}
+\newcommand{\RP} {\text{$\mathcal{R}$-$\Pi$}}
+\newcommand{\RS} {\text{$\mathcal{R}$-$\Sigma$}}
+\newcommand{\RAr}{\text{$\mathcal{R}$-$\rightarrow$}}
+%\newcommand{\RN}{\text{$\mathcal{R}$-N}}
